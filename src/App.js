@@ -1,26 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components';
+
+import Roboto from  './assets/Roboto/fontRoboto';
+import Litter from './components/Litter';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppWrapper>
+      <Roboto />
+      <Litter
+        description="Project 1"
+        litterBackColor={{ primary: '#24753A', secondary: '#195E2C'}}
+        litterDoorColor="#38A656"
+      />
+      <Litter
+        description="Project 2"
+        litterBackColor={{ primary: '#244063', secondary: '#13335C'}}
+        litterDoorColor="#4785D6"
+      />
+    </AppWrapper>
   );
 }
+
+const AppWrapper = styled.div`
+  background: #49B386;
+  width: 100%;
+  height: 100vh;
+  padding: 25px;
+  display: flex;
+`
 
 export default App;
