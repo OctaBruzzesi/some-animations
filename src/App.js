@@ -48,6 +48,6 @@ const AppWrapper = styled.div`
   display: flex;
 `
 
-const LitterContainer = animated(Litter)
+const LitterContainer = animated(Litter);
 
 export default App;
