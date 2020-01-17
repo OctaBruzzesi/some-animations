@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { animated, useSpring } from 'react-spring';
 
-const Litter = ({ description, litterBackColor, litterDoorColor }) => {
+const Litter = ({ description, litterBackColor, litterDoorColor, ...props }) => {
   const [open, setOpen] = useState(false);
 
   const { rotation } = useSpring({
@@ -14,6 +14,7 @@ const Litter = ({ description, litterBackColor, litterDoorColor }) => {
     <Container>
       <LitterBack
         color={litterBackColor}
+        {...props}
         onMouseEnter={() => setOpen(e => !e)}
       >
         <LitterDoor
@@ -52,8 +53,8 @@ const LitterDoor = styled(animated.div)`
   position: absolute;
   background: ${props => props.color};
   border-radius: 9px;
-  height: 24%;
-  width: 24%;
+  height: 100%;
+  width: 100%;
   transform-origin: left;
   align-items: center;
   justify-content: space-around;
